@@ -18,5 +18,23 @@
 <body>
   <h1>Google Analytics 테스트 페이지</h1>
   <p>이 페이지에 접속하면 GA에 트래픽이 기록됩니다.</p>
+
+  <h1>GA4 커스텀 이벤트 테스트</h1>
+  <button id="testButton">버튼 클릭!</button>
+
+  <script>
+    document.getElementById("testButton").addEventListener("click", function() {
+      const buttonId = this.id;
+
+      gtag('event', 'button_click', {
+        'button_id': buttonId,
+        'event_category': 'UI Interaction',
+        'event_label': 'GA Custom Event Test',
+        'value': 1
+      });
+
+      console.log(`버튼 [${buttonId}] 클릭 이벤트 전송됨`);
+    });
+  </script>
 </body>
 </html>
