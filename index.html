@@ -32,6 +32,19 @@
 
       console.log(`버튼 [${buttonId}] 클릭 이벤트 전송됨`);
     });
+
+    document.getElementById("testButton02").addEventListener("click", function() {
+      const buttonId02 = 2;
+
+      gtag('event', 'button_click02', {
+        'button_id': buttonId02,
+        'event_category': 'UI Interaction',
+        'event_label': 'GA Custom Event Test',
+        'value': 2
+      });
+
+      console.log(`버튼 [${buttonId02}] 클릭 이벤트 전송됨`);
+    });
   </script>
 </body>
 </html>
